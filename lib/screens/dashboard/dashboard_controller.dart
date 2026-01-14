@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +27,12 @@ class DashboardController extends GetxController {
     loadUserProfile();
   }
 
+
+
+  Future<void> copyQuoteText(String text) async {
+    await Clipboard.setData(ClipboardData(text: text));
+    Get.snackbar('Copied!', 'Text copied to clipboard ✨');
+  }
   Rx<ShareTemplate> selectedTemplate = ShareTemplate.soft.obs;
   void showTemplatePicker(GlobalKey boundaryKey) {
     selectedTemplate.value = ShareTemplate.soft; // 🔥 reset on open
@@ -424,6 +431,7 @@ class DashboardController extends GetxController {
     try {
       isLoading.value = true;
       await _repo.updatePassword(password);
+      logout();
       Get.snackbar("Success 🔐", "Password updated");
     } catch (e) {
       Get.snackbar("Error", e.toString());

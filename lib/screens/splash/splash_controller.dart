@@ -10,11 +10,12 @@ class SplashController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+
     _boot();
   }
 
   void _boot() async {
-    await Future.delayed(const Duration(milliseconds: 400));
+    await Future.delayed(const Duration(seconds: 2));
 
     debugPrint("🔍 Checking session...");
     final hasSession = _repo.hasSession();

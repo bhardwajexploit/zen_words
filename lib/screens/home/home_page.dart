@@ -323,6 +323,7 @@ class HomePage extends StatelessWidget {
                   Icons.content_copy,
                   const Color(0xFFDFF9F2),
                   const Color(0xFF7BDCB5),
+                  onTap: () => c.copyQuoteText(quote.q,),
                 ),
               ],
             ),

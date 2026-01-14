@@ -1,199 +1,175 @@
-📱 QuoteVault — AI-Powered Quote App
+# 📱 QuoteVault — AI-Powered Quote App
 
-QuoteVault is a modern, cloud-based quote discovery and collection app built using Flutter and Supabase.
+QuoteVault is a modern, cloud-based quote discovery and collection app built using **Flutter** and **Supabase**.  
 It allows users to explore quotes, save favorites, organize collections, and generate beautiful shareable quote cards.
 
-This project was developed as part of a mobile engineering assignment to demonstrate AI-assisted development, clean architecture, and full-stack mobile engineering.
+This project was developed as part of a mobile engineering assignment to demonstrate **AI-assisted development, clean architecture, and full-stack mobile engineering**.
 
-✨ Features
-🔐 Authentication & Accounts
+---
 
-Email & password sign-up
+## ✨ Features
 
-Login & logout
+### 🔐 Authentication & Accounts
+- Email & password sign-up
+- Login & logout
+- Password reset
+- Session persistence (users stay logged in)
+- User profile (email + name)
 
-Password reset
+Powered by **Supabase Auth**
 
-Session persistence (users stay logged in)
+---
 
-User profile (email + name)
+### 📚 Quote Discovery
+- Home feed of quotes
+- Pull-to-refresh
+- Search by quote text
+- Search by author
+- Loading & empty states
+- Quote of the Day logic (changes daily)
 
-Powered by Supabase Auth
+Quotes are loaded from **Supabase Database**.
 
-📚 Quote Discovery
+---
 
-Home feed of quotes
-
-Pull-to-refresh
-
-Search by quote text
-
-Search by author
-
-Loading & empty states
-
-Quote of the Day logic (changes daily)
-
-Quotes are loaded from Supabase Database.
-
-❤️ Favorites & Collections
-
-Save quotes to favorites
-
-View all favorites
-
-Create custom collections
-
-Add/remove quotes from collections
-
-Cloud-synced per user
+### ❤️ Favorites & Collections
+- Save quotes to favorites
+- View all favorites
+- Create custom collections
+- Add/remove quotes from collections
+- Cloud-synced per user
 
 Supabase tables used:
-
-user_favorites
-
-collections
-
-collection_quotes
+- `user_favorites`
+- `collections`
+- `collection_quotes`
 
 All data is protected using Supabase Row-Level Security (RLS).
 
-🖼️ Quote Sharing
+---
 
-Generate beautiful quote cards
+### 🖼️ Quote Sharing
+- Generate beautiful quote cards
+- 3 different share card styles
+- Share quote as an image via system share sheet
+- Rendered using Flutter canvas snapshot (`RepaintBoundary`)
 
-3 different share card styles
+---
 
-Share quote as an image via system share sheet
+### 🎨 Personalization
+- Light & Dark mode
+- Pink themed design system
+- User preferences stored locally using GetStorage
 
-Rendered using Flutter canvas snapshot (RepaintBoundary)
+---
 
-🎨 Personalization
+### ☁️ Cloud Sync
+- Favorites & collections persist across devices
+- Supabase Auth + Database keeps everything in sync
 
-Light & Dark mode
+---
 
-Pink themed design system
+### 🧪 Quote of the Day
+- Daily quote is deterministic (same for all users each day)
+- Changes automatically every day using date-based logic
 
-User preferences stored locally using GetStorage
+---
 
-☁️ Cloud Sync
-
-Favorites & collections persist across devices
-
-Supabase Auth + Database keeps everything in sync
-
-🧪 Quote of the Day
-
-Daily quote is deterministic (same for all users each day)
-
-Changes automatically every day using date-based logic
-
-⚠️ Features Not Implemented
+## ⚠️ Features Not Implemented
 
 These features were documented but not completed due to time and platform constraints:
 
-Feature	Status
-Browse by category UI	ZenQuotes API does not provide categories
-Push notifications	Logic prepared but Android requires desugaring
-Notification time selector	Storage + logic done, native scheduling incomplete
-Save quote card to gallery	Removed due to deprecated plugins
-Plain text share	Image share implemented instead
-Font size slider	Not added
-Multiple color themes	Light, Dark & Pink only
-Settings sync to Supabase	Local only
-Home screen widget	Not implemented
+| Feature | Status |
+|-------|--------|
+| Browse by category UI | ZenQuotes API does not provide categories |
+| Push notifications | Logic prepared but Android requires desugaring |
+| Notification time selector | Storage + logic done, native scheduling incomplete |
+| Save quote card to gallery | Removed due to deprecated plugins |
+| Plain text share | Image share implemented instead |
+| Font size slider | Not added |
+| Multiple color themes | Light, Dark & Pink only |
+| Settings sync to Supabase | Local only |
+| Home screen widget | Not implemented |
 
 All incomplete features are documented transparently for evaluation.
 
-🧱 Architecture
+---
+
+## 🧱 Architecture
 
 The app follows a clean layered structure:
 
 UI → Controller → Repository → Supabase
-
-
 Project structure:
 
 lib/
 ├── core/
-│   ├── theme/
-│   ├── constants/
-│   └── storage/
+│ ├── theme/
+│ ├── constants/
+│ └── storage/
 ├── data/
-│   └── remote/ (Supabase)
+│ └── remote/ (Supabase)
 ├── model/
 ├── screens/
-│   ├── auth/
-│   ├── dashboard/
-│   ├── collections/
-│   ├── splash/
-│   └── settings/
+│ ├── auth/
+│ ├── dashboard/
+│ ├── collections/
+│ ├── splash/
+│ └── settings/
 └── services/
 └── notifications/
 
 
-State management & navigation: GetX
+State management & navigation: **GetX**
 
-🧬 AI-Driven Development
+---
 
-This project was built using AI tools extensively:
+## 🧬 AI-Driven Development
 
-AI tools used
+This project was built using AI tools extensively.
 
-ChatGPT
-
-Cursor
-
-Claude
-
-Supabase AI Docs
-
-Figma Make / Stitch
+**AI tools used**
+- ChatGPT
+- Cursor
+- Claude
+- Supabase AI Docs
+- Figma Make / Stitch
 
 AI was used for:
+- Flutter architecture
+- Supabase RLS & queries
+- UI design
+- State management
+- Debugging
+- Share card rendering
+- Notification logic
+- Documentation
 
-Flutter architecture
+This allowed faster iteration, fewer bugs, and production-grade structure.
 
-Supabase RLS & queries
+---
 
-UI design
+## 🎨 Design
 
-State management
+UI was designed using **Stitch / Figma Make** and implemented in Flutter with:
+- Glassmorphism
+- Soft gradients
+- Rounded cards
+- Playful pink theme
+- Custom typography
 
-Debugging errors
+**Design Link:**  
+https://stitch.withgoogle.com/projects/6978933305466600354
 
-Share card rendering
+---
 
-Notification logic
-
-README documentation
-
-This allowed rapid iteration, fewer bugs, and a much faster development cycle.
-
-🎨 Design
-
-UI was designed using Stitch / Figma Make and implemented in Flutter with:
-
-Glassmorphism
-
-Soft gradients
-
-Rounded cards
-
-Playful pink theme
-
-Custom typography
-
-Design Link:
-(Add your Stitch / Figma link here)
-
-🗄️ Supabase Setup
+## 🗄️ Supabase Setup
 
 Tables used:
 
-quotes
+### `quotes`
+```sql
 id, quote, author
-
 user_favorites
 id, user_id, quote, author, created_at
 
@@ -203,9 +179,7 @@ id, user_id, name, created_at
 collection_quotes
 id, collection_id, quote, author
 
-
 Enable Row Level Security:
-
 user_id = auth.uid()
 
 ▶️ How to Run
@@ -213,7 +187,6 @@ user_id = auth.uid()
 Add your Supabase keys inside SupabaseService.init()
 
 Run:
-
 flutter pub get
 flutter run
 
@@ -226,6 +199,33 @@ The video will demonstrate:
 Authentication
 
 Browsing & search
+
+Favorites & collections
+
+Share card generation
+
+Theme switching
+
+AI-assisted workflow
+
+
+▶️ How to Run
+
+Add your Supabase keys inside SupabaseService.init()
+
+Run:
+
+flutter pub get
+flutter run
+
+Loom Video
+https://www.loom.com/share/7bef7b265e0c4b628bc6b5dd3f77eb33
+
+This will demonstrate:
+
+Auth flow
+
+Quote browsing
 
 Favorites & collections
 
