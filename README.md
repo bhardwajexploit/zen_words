@@ -104,19 +104,24 @@ Project structure:
 
 lib/
 ├── core/
-│ ├── theme/
-│ ├── constants/
-│ └── storage/
+│   ├── theme/
+│   ├── constants/
+│   └── storage/
+│
 ├── data/
-│ └── remote/ (Supabase)
+│   └── remote/        
+│
 ├── model/
+│
 ├── screens/
-│ ├── auth/
-│ ├── dashboard/
-│ ├── collections/
-│ ├── splash/
-│ └── settings/
-└── services/
+│   ├── auth/
+│   ├── dashboard/
+│   ├── collections/
+│   ├── splash/
+│   └── settings/
+│
+├── services/
+│
 └── notifications/
 
 
@@ -191,8 +196,7 @@ flutter pub get
 flutter run
 
 🎥 Loom Video
-
-(Add your Loom video link here)
+https://www.loom.com/share/7bef7b265e0c4b628bc6b5dd3f77eb33
 
 The video will demonstrate:
 
@@ -208,29 +212,3 @@ Theme switching
 
 AI-assisted workflow
 
-
-▶️ How to Run
-
-Add your Supabase keys inside SupabaseService.init()
-
-Run:
-
-flutter pub get
-flutter run
-
-Loom Video
-https://www.loom.com/share/7bef7b265e0c4b628bc6b5dd3f77eb33
-
-This will demonstrate:
-
-Auth flow
-
-Quote browsing
-
-Favorites & collections
-
-Share card generation
-
-Theme switching
-
-AI-assisted workflow
