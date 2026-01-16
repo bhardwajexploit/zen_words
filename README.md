@@ -1,4 +1,4 @@
-# 📱 QuoteVault — AI-Powered Quote App
+# 📱 ZenWord — AI-Powered Quote App
 
 QuoteVault is a modern, cloud-based quote discovery and collection app built using **Flutter** and **Supabase**.  
 It allows users to explore quotes, save favorites, organize collections, and generate beautiful shareable quote cards.
